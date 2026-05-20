@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fel's Food Court | Coconut Rice & Jollof Rice — Strictly Preorder</title>
-    <!-- Google Fonts: Serif elegance + modern grotesk -->
+    <title>Fel's Food Court | Classic & Assorted Rice Meals — All with Protein Choice</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* animated noise texture */
         .noise {
             position: fixed;
             top: 0;
@@ -35,7 +34,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* animated gradient orbs */
         .orb-bg {
             position: fixed;
             width: 100%;
@@ -66,7 +64,6 @@
             z-index: 10;
         }
 
-        /* luxury navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -80,7 +77,6 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.3rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
             background: linear-gradient(125deg, #fcd34d, #ea7c2e);
             -webkit-background-clip: text;
             background-clip: text;
@@ -100,12 +96,10 @@
             font-weight: 500;
             font-size: 0.85rem;
             border: 1px solid rgba(37, 211, 102, 0.4);
-            transition: 0.2s;
         }
 
-        /* hero cinematic */
         .hero {
-            min-height: 85vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             padding: 2rem 0 4rem;
@@ -130,14 +124,13 @@
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
         }
         .hero h1 span {
             color: #f59e0b;
-            text-shadow: 0 2px 15px rgba(245,158,11,0.2);
         }
         .hero-desc {
             font-size: 1.1rem;
@@ -162,7 +155,6 @@
             color: #25D366;
         }
         .hero-image-wrapper {
-            position: relative;
             border-radius: 40px;
             overflow: hidden;
             transform: perspective(1000px) rotateY(-2deg);
@@ -173,129 +165,150 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: 0.7s;
-        }
-        .hero-image-wrapper:hover img {
-            transform: scale(1.03);
         }
 
-        /* menu section with 3D flip elegance */
         .menu-showcase {
-            padding: 6rem 0 8rem;
+            padding: 4rem 0 7rem;
         }
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         .section-sub {
             font-size: 0.8rem;
             letter-spacing: 5px;
             color: #f59e0b;
             text-transform: uppercase;
-            font-weight: 500;
         }
         .section-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-top: 0.8rem;
         }
-        .cards-luxury {
+        .cards-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 3rem;
+            gap: 2.5rem;
         }
-        .lux-card {
+        .menu-card {
             flex: 1;
-            min-width: 320px;
-            max-width: 480px;
-            background: rgba(18, 16, 14, 0.65);
+            min-width: 300px;
+            max-width: 400px;
+            background: rgba(18, 16, 14, 0.75);
             backdrop-filter: blur(18px);
-            border-radius: 48px;
+            border-radius: 44px;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            border: 1px solid rgba(245, 158, 11, 0.25);
         }
-        .lux-card:hover {
-            transform: translateY(-18px);
-            border-color: rgba(245, 158, 11, 0.7);
-            background: rgba(22, 19, 16, 0.85);
+        .menu-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 158, 11, 0.6);
             box-shadow: 0 30px 45px -20px rgba(0,0,0,0.8);
         }
-        .card-media {
+        .card-img {
             position: relative;
-            height: 320px;
+            height: 240px;
             overflow: hidden;
-            background: #1a1612;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .card-media img {
+        .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            transition: transform 0.8s ease;
-            display: block;
+            transition: transform 0.5s ease;
         }
-        .lux-card:hover .card-media img {
-            transform: scale(1.08);
+        .menu-card:hover .card-img img {
+            transform: scale(1.05);
         }
-        .price-badge {
+        .price-tag {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 16px;
+            right: 16px;
             background: #1f1b16e6;
             backdrop-filter: blur(8px);
-            padding: 0.7rem 1.4rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 50px;
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #fbbf24;
             border-left: 3px solid #f59e0b;
-            font-family: monospace;
-            letter-spacing: -1px;
-            z-index: 12;
         }
-        .price-badge small {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #e2c293;
+        .price-tag small {
+            font-size: 0.7rem;
         }
-        .card-content {
-            padding: 2rem 2rem 2.2rem;
+        .card-body {
+            padding: 1.5rem 1.6rem 1.8rem;
         }
-        .card-content h3 {
+        .card-body h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.1rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
-        .flavor-profile {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            margin: 0.6rem 0 1rem;
-            font-size: 0.8rem;
+        .assorted-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            margin: 0.5rem 0;
             color: #f5bc70;
         }
-        .description {
+        .desc-text {
             color: #bfb6a8;
             line-height: 1.5;
-            margin: 1rem 0 1.8rem;
-            font-size: 0.95rem;
+            margin: 0.8rem 0 1rem;
+            font-size: 0.85rem;
         }
-        .order-wa-btn {
+        .protein-selector {
+            margin: 1rem 0 1.2rem;
+            padding: 0.7rem 0;
+            border-top: 1px solid rgba(245,158,11,0.2);
+            border-bottom: 1px solid rgba(245,158,11,0.2);
+        }
+        .protein-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .protein-options {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+        .protein-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(245,158,11,0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #e2d5c4;
+            font-family: 'Inter', sans-serif;
+        }
+        .protein-btn.active {
+            background: #f59e0b;
+            color: #1a1612;
+            border-color: #f59e0b;
+            font-weight: 600;
+        }
+        .protein-btn:hover {
+            background: rgba(245,158,11,0.4);
+        }
+        .order-btn {
             background: linear-gradient(105deg, #25D366 0%, #128C7E 100%);
             border: none;
             width: 100%;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             border-radius: 100px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: white;
             display: flex;
             align-items: center;
@@ -304,16 +317,12 @@
             cursor: pointer;
             transition: all 0.25s;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 0.7px;
-            box-shadow: 0 10px 20px -5px rgba(37,211,102,0.3);
+            margin-top: 0.5rem;
         }
-        .order-wa-btn:hover {
+        .order-btn:hover {
             transform: scale(0.97);
             filter: brightness(1.07);
-            box-shadow: 0 12px 22px -6px #25d36670;
         }
-
-        /* info strip */
         .info-strip {
             display: flex;
             flex-wrap: wrap;
@@ -322,29 +331,27 @@
             background: rgba(0, 0, 0, 0.35);
             backdrop-filter: blur(12px);
             border-radius: 80px;
-            padding: 1.2rem 2rem;
-            margin: 2rem 0 3rem;
+            padding: 1rem 2rem;
+            margin: 1rem 0 3rem;
             border: 1px solid rgba(245,158,11,0.2);
         }
         .info-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 500;
+            gap: 10px;
+            font-size: 0.85rem;
         }
         .info-item i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #f59e0b;
         }
-
         .footer {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem;
             border-top: 1px solid rgba(245,158,11,0.15);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #a58e72;
         }
-
         .toast-premium {
             position: fixed;
             bottom: 30px;
@@ -352,7 +359,7 @@
             transform: translateX(-50%) translateY(20px);
             background: #1a1713f2;
             backdrop-filter: blur(24px);
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 60px;
             color: #fcd34d;
             font-weight: 600;
@@ -361,67 +368,36 @@
             visibility: hidden;
             transition: 0.25s;
             border: 1px solid #f59e0b;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             white-space: nowrap;
             pointer-events: none;
-            letter-spacing: 0.3px;
         }
         .toast-premium.show {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
         }
-
         @media (max-width: 1100px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .hero h1 {
-                font-size: 3.8rem;
-            }
-            .container {
-                padding: 0 1.8rem;
-            }
-            .section-header h2 {
-                font-size: 2.6rem;
-            }
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero h1 { font-size: 3rem; }
+            .container { padding: 0 1.5rem; }
+            .section-header h2 { font-size: 2.3rem; }
         }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-            .price-badge {
-                font-size: 1.4rem;
-                padding: 0.4rem 1rem;
-            }
-            .info-strip {
-                flex-direction: column;
-                align-items: center;
-                border-radius: 40px;
-            }
-            .card-media {
-                height: 260px;
-            }
+        @media (max-width: 550px) {
+            .menu-card { min-width: 280px; }
+            .protein-options { gap: 0.5rem; }
+            .protein-btn { padding: 0.35rem 0.8rem; font-size: 0.7rem; }
         }
     </style>
 </head>
 <body>
-
 <div class="noise"></div>
-<div class="orb-bg">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-</div>
+<div class="orb-bg"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
 
 <div class="container">
     <nav class="navbar">
-        <div>
-            <div class="logo">FEL'S FOOD COURT</div>
-            <div class="logo-sub">artisanal rice · accra</div>
-        </div>
-        <div class="wa-cta"><i class="fab fa-whatsapp"></i> Order via WhatsApp</div>
+        <div><div class="logo">FEL'S FOOD COURT</div><div class="logo-sub">choose your protein · accra</div></div>
+        <div class="wa-cta"><i class="fab fa-whatsapp"></i> Preorder Only</div>
     </nav>
 </div>
 
@@ -430,60 +406,113 @@
         <div class="hero">
             <div class="hero-grid">
                 <div class="hero-left">
-                    <div class="hero-badge">EST. 2025 · PREORDER ONLY</div>
-                    <h1>rice reimagined. <span>two legends.</span></h1>
-                    <p class="hero-desc">Fel's Food Court brings you an uncompromising rice experience — Coconut Rice and Jollof Rice, each perfected over generations. <strong>Strictly made-to-order.</strong> Every plate is crafted fresh, never bulk.</p>
-                    <div class="preorder-pill">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>📱 ALL ORDERS GO TO WHATSAPP — NO EXCEPTIONS</span>
-                    </div>
+                    <div class="hero-badge">EST. 2025 · ALL MEALS INCLUDE PROTEIN</div>
+                    <h1>your rice, <span>your protein.</span> <br>classic or fully assorted.</h1>
+                    <p class="hero-desc">Every meal now comes with your choice of Beef, Chicken, or Goat. Upgrade to Assorted to add coleslaw, plantain, and egg. All orders strictly via WhatsApp.</p>
+                    <div class="preorder-pill"><i class="fab fa-whatsapp"></i><span>📱 ALL ORDERS GO TO WHATSAPP — NO EXCEPTIONS</span></div>
                 </div>
                 <div class="hero-right">
-                    <div class="hero-image-wrapper">
-                        <img src="images/image5.jpeg" alt="Fel's signature rice platter" onerror="this.src='https://images.pexels.com/photos/1618896/pexels-photo-1618896.jpeg?auto=compress&cs=tinysrgb&w=600'">
-                    </div>
+                    <div class="hero-image-wrapper"><img src="images/image5.jpeg" alt="Fel's signature rice platter" onerror="this.src='https://images.pexels.com/photos/1618896/pexels-photo-1618896.jpeg?auto=compress&cs=tinysrgb&w=600'"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- premium menu section: two items exactly with CLEAR, FULL images -->
     <div class="menu-showcase">
         <div class="container">
             <div class="section-header">
-                <div class="section-sub">the preorder collection</div>
-                <h2>100 cedis · each masterpiece</h2>
+                <div class="section-sub">the menu · 100 cedis each</div>
+                <h2>four delicious choices</h2>
+                <p style="color:#b9aa96; font-size:0.85rem; margin-top:0.5rem;">All meals include your choice of protein (Beef, Chicken, or Goat). Assorted adds salad + plantain + egg.</p>
             </div>
-            <div class="cards-luxury">
-                <!-- Coconut Rice Card -->
-                <div class="lux-card" id="coconut-card">
-                    <div class="card-media">
-                        <img src="images/image1.jpeg" alt="Beautiful Coconut Rice with fried plantain" onerror="this.src='https://images.pexels.com/photos/6129467/pexels-photo-6129467.jpeg?auto=compress&cs=tinysrgb&w=800'">
-                        <div class="price-badge">₵100<small> GHS</small></div>
+            <div class="cards-grid">
+                <!-- 1. CLASSIC COCONUT RICE (with protein) -->
+                <div class="menu-card" data-type="classic-coconut">
+                    <div class="card-img">
+                        <img src="images/image1.jpeg" alt="Classic Coconut Rice" onerror="this.src='https://images.pexels.com/photos/6129467/pexels-photo-6129467.jpeg?auto=compress&cs=tinysrgb&w=800'">
+                        <div class="price-tag">₵100<small> GHS</small></div>
                     </div>
-                    <div class="card-content">
-                        <h3>Coconut Rice</h3>
-                        <div class="flavor-profile"><i class="fas fa-seedling"></i> coconut cream · lemongrass · fried plantain</div>
-                        <div class="description">Aromatic basmati rice slow-cooked in double-extracted coconut milk, infused with pandan and curry leaves. Served with golden fried plantains and a side of tangy coconut chutney. Velvety, fragrant, unforgettable.</div>
-                        <button class="order-wa-btn" data-dish="Coconut Rice" data-price="100 cedis">
-                            <i class="fab fa-whatsapp"></i> preorder via whatsapp
-                        </button>
+                    <div class="card-body">
+                        <h3>Coconut Rice <span style="font-size:0.9rem;">(Classic)</span></h3>
+                        <div class="desc-text">Fragrant coconut-infused basmati rice, served with fried plantains. Includes your choice of protein.</div>
+                        <div class="protein-selector" data-dish-group="classic-coconut">
+                            <div class="protein-label"><i class="fas fa-drumstick-bite"></i> SELECT YOUR PROTEIN</div>
+                            <div class="protein-options">
+                                <button type="button" class="protein-btn" data-protein="Beef">🐄 Beef</button>
+                                <button type="button" class="protein-btn" data-protein="Chicken">🍗 Chicken</button>
+                                <button type="button" class="protein-btn" data-protein="Goat">🐐 Goat</button>
+                            </div>
+                            <div style="font-size:0.65rem; color:#a88148; margin-top:6px;">Extra: Gizzard/Sausage — mention in WhatsApp</div>
+                        </div>
+                        <button class="order-btn" data-dish="Coconut Rice (Classic)" data-price="100 cedis" data-assorted="false" data-group="classic-coconut"><i class="fab fa-whatsapp"></i> Preorder Classic</button>
                     </div>
                 </div>
 
-                <!-- Jollof Rice Card -->
-                <div class="lux-card" id="jollof-card">
-                    <div class="card-media">
-                        <img src="images/image2.jpeg" alt="Authentic Ghanaian Jollof Rice" onerror="this.src='https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800'">
-                        <div class="price-badge">₵100<small> GHS</small></div>
+                <!-- 2. CLASSIC JOLLOF RICE (with protein) -->
+                <div class="menu-card" data-type="classic-jollof">
+                    <div class="card-img">
+                        <img src="images/image2.jpeg" alt="Classic Jollof Rice" onerror="this.src='https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800'">
+                        <div class="price-tag">₵100<small> GHS</small></div>
                     </div>
-                    <div class="card-content">
-                        <h3>Jollof Rice</h3>
-                        <div class="flavor-profile"><i class="fas fa-fire"></i> smoky tomato · scotch bonnet · grilled plantain</div>
-                        <div class="description">The authentic Ghanaian party jollof — long-grain rice cooked in a rich, slow-simmered tomato stew with onions, bell peppers, and secret spice blend. Served with char-grilled plantains and fresh coleslaw. Deep, bold, soulful.</div>
-                        <button class="order-wa-btn" data-dish="Jollof Rice" data-price="100 cedis">
-                            <i class="fab fa-whatsapp"></i> preorder via whatsapp
-                        </button>
+                    <div class="card-body">
+                        <h3>Jollof Rice <span style="font-size:0.9rem;">(Classic)</span></h3>
+                        <div class="desc-text">Smoky Ghanaian jollof, rich tomato flavor, served with fried plantain. Includes your choice of protein.</div>
+                        <div class="protein-selector" data-dish-group="classic-jollof">
+                            <div class="protein-label"><i class="fas fa-drumstick-bite"></i> SELECT YOUR PROTEIN</div>
+                            <div class="protein-options">
+                                <button type="button" class="protein-btn" data-protein="Beef">🐄 Beef</button>
+                                <button type="button" class="protein-btn" data-protein="Chicken">🍗 Chicken</button>
+                                <button type="button" class="protein-btn" data-protein="Goat">🐐 Goat</button>
+                            </div>
+                            <div style="font-size:0.65rem; color:#a88148; margin-top:6px;">Extra: Gizzard/Sausage — mention in WhatsApp</div>
+                        </div>
+                        <button class="order-btn" data-dish="Jollof Rice (Classic)" data-price="100 cedis" data-assorted="false" data-group="classic-jollof"><i class="fab fa-whatsapp"></i> Preorder Classic</button>
+                    </div>
+                </div>
+
+                <!-- 3. ASSORTED COCONUT RICE (with protein + salad, plantain, egg) -->
+                <div class="menu-card" data-type="assorted-coconut">
+                    <div class="card-img">
+                        <img src="images/image1.jpeg" alt="Assorted Coconut Rice" onerror="this.src='https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800'">
+                        <div class="price-tag">₵100<small> GHS</small></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Coconut Rice <span style="font-size:0.9rem;">(Assorted)</span></h3>
+                        <div class="assorted-badge"><i class="fas fa-check-circle"></i> FULL ASSORTED: Salad + Plantain + Egg</div>
+                        <div class="desc-text">Creamy coconut rice with coleslaw, plantain, egg — plus your choice of protein.</div>
+                        <div class="protein-selector" data-dish-group="coconut-assorted">
+                            <div class="protein-label"><i class="fas fa-drumstick-bite"></i> SELECT PROTEIN</div>
+                            <div class="protein-options">
+                                <button type="button" class="protein-btn" data-protein="Beef">🐄 Beef</button>
+                                <button type="button" class="protein-btn" data-protein="Chicken">🍗 Chicken</button>
+                                <button type="button" class="protein-btn" data-protein="Goat">🐐 Goat</button>
+                            </div>
+                            <div style="font-size:0.65rem; color:#a88148; margin-top:6px;">Extra: Gizzard/Sausage — mention in WhatsApp</div>
+                        </div>
+                        <button class="order-btn" data-dish="Coconut Rice (Assorted)" data-price="100 cedis" data-assorted="true" data-group="coconut-assorted"><i class="fab fa-whatsapp"></i> Preorder Assorted</button>
+                    </div>
+                </div>
+
+                <!-- 4. ASSORTED JOLLOF RICE (with protein + salad, plantain, egg) -->
+                <div class="menu-card" data-type="assorted-jollof">
+                    <div class="card-img">
+                        <img src="images/image2.jpeg" alt="Assorted Jollof Rice" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800'">
+                        <div class="price-tag">₵100<small> GHS</small></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Jollof Rice <span style="font-size:0.9rem;">(Assorted)</span></h3>
+                        <div class="assorted-badge"><i class="fas fa-check-circle"></i> FULL ASSORTED: Salad + Plantain + Egg</div>
+                        <div class="desc-text">Bold jollof rice with coleslaw, grilled plantain, egg — plus your choice of protein.</div>
+                        <div class="protein-selector" data-dish-group="jollof-assorted">
+                            <div class="protein-label"><i class="fas fa-drumstick-bite"></i> SELECT PROTEIN</div>
+                            <div class="protein-options">
+                                <button type="button" class="protein-btn" data-protein="Beef">🐄 Beef</button>
+                                <button type="button" class="protein-btn" data-protein="Chicken">🍗 Chicken</button>
+                                <button type="button" class="protein-btn" data-protein="Goat">🐐 Goat</button>
+                            </div>
+                            <div style="font-size:0.65rem; color:#a88148; margin-top:6px;">Extra: Gizzard/Sausage — mention in WhatsApp</div>
+                        </div>
+                        <button class="order-btn" data-dish="Jollof Rice (Assorted)" data-price="100 cedis" data-assorted="true" data-group="jollof-assorted"><i class="fab fa-whatsapp"></i> Preorder Assorted</button>
                     </div>
                 </div>
             </div>
@@ -492,148 +521,195 @@
 
     <div class="container">
         <div class="info-strip">
-            <div class="info-item"><i class="fas fa-clock"></i> <span>⏱️ Strict Preorder: 2-3 hours ahead</span></div>
-            <div class="info-item"><i class="fas fa-truck-fast"></i> <span>🚚 Delivery via WhatsApp negotiation</span></div>
-            <div class="info-item"><i class="fas fa-check-circle"></i> <span>✅ Confirmed only after WhatsApp reply</span></div>
+            <div class="info-item"><i class="fas fa-clock"></i><span>⏱️ Strict Preorder: 2-3hrs ahead</span></div>
+            <div class="info-item"><i class="fas fa-utensils"></i><span>🍽️ Assorted includes salad + plantain + egg</span></div>
+            <div class="info-item"><i class="fas fa-check-circle"></i><span>✅ Proteins available: Beef, Chicken, Goat</span></div>
         </div>
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <div style="background: rgba(0,0,0,0.4); display: inline-block; padding: 0.6rem 1.6rem; border-radius: 60px; font-size: 0.8rem; backdrop-filter: blur(8px);">
-                <i class="fab fa-whatsapp"></i> Click any button — order details will be clearly formatted
-            </div>
-        </div>
+        <div style="text-align:center; margin-bottom:2rem;"><div style="background:rgba(0,0,0,0.4); display:inline-block; padding:0.5rem 1.5rem; border-radius:60px; font-size:0.75rem;"><i class="fab fa-whatsapp"></i> Click any button — your full order details will be clearly formatted</div></div>
     </div>
 </main>
 
 <footer class="footer">
-    <p><i class="fas fa-heart" style="color: #f59e0b;"></i> FEL'S FOOD COURT — Coconut Rice & Jollof Rice · 100 cedis each</p>
-    <p style="margin-top: 0.6rem;">Strictly Preorder Only · All orders go directly to WhatsApp</p>
+    <p><i class="fas fa-heart" style="color:#f59e0b;"></i> FEL'S FOOD COURT — Classic or Assorted · All meals 100 cedis with protein choice</p>
+    <p>Strictly Preorder Only · Beef, Chicken, or Goat available · All orders via WhatsApp</p>
 </footer>
 
-<div id="premiumToast" class="toast-premium">
-    <i class="fab fa-whatsapp"></i> redirecting to Fel's WhatsApp preorder...
-</div>
+<div id="premiumToast" class="toast-premium"><i class="fab fa-whatsapp"></i> Opening WhatsApp with your order...</div>
 
 <script>
     (function() {
-        // =====================================================================
-        // 🔥 IMPORTANT – SET YOUR ACTUAL WHATSAPP BUSINESS NUMBER 🔥
-        // Replace with your real Ghana number (example: 233501234567)
-        // Current number set to: 233533639864
-        // =====================================================================
-        const FELS_WA_NUMBER = '233533639864';   // <--- YOUR WHATSAPP NUMBER
+        // =====================================================
+        // 🔥 REPLACE WITH YOUR ACTUAL WHATSAPP BUSINESS NUMBER 🔥
+        // =====================================================
+        const FELS_WA_NUMBER = '233533639864';   // <--- CHANGE THIS TO YOUR REAL NUMBER
         
-        // Helper: clean number for wa.me
         function cleanNumber(num) {
             let cleaned = String(num).replace(/\s+/g, '').replace(/[^0-9+]/g, '');
             if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
             if (cleaned.startsWith('0') && cleaned.length > 9) cleaned = '233' + cleaned.substring(1);
             if (!cleaned || cleaned.length < 8) cleaned = '233533639864';
-            // Ensure it starts with 233 for Ghana
-            if (!cleaned.startsWith('233') && cleaned.length === 9) {
-                cleaned = '233' + cleaned;
-            }
+            if (!cleaned.startsWith('233') && cleaned.length === 9) cleaned = '233' + cleaned;
             return cleaned;
         }
 
-        // Build EXTREMELY CLEAN, WELL-ARRANGED WhatsApp message
-        // Using proper formatting, line breaks, and emojis for clarity
-        function buildWhatsAppLink(dish, price) {
-            const number = cleanNumber(FELS_WA_NUMBER);
-            const now = new Date();
-            
-            // Format date beautifully
-            const dateStr = now.toLocaleDateString('en-GB', { 
-                weekday: 'long', 
-                day: 'numeric', 
-                month: 'long', 
-                year: 'numeric' 
-            });
-            const timeStr = now.toLocaleTimeString('en-GB', { 
-                hour: '2-digit', 
-                minute: '2-digit',
-                hour12: true 
-            });
-            
-            // Crystal clear, well-structured message with borders and sections
-            const message = `
-     🍛 FEL'S FOOD COURT - NEW ORDER 🍛    
+        // Store protein selections for all four dish groups
+        const proteinSelections = {
+            'classic-coconut': 'Beef',
+            'classic-jollof': 'Beef',
+            'coconut-assorted': 'Beef',
+            'jollof-assorted': 'Beef'
+        };
 
-
-
-             ORDER DETAILS              
-
-  🍽️  DISH:      ${dish}
-  💰  PRICE:     ${price} (100 GHS)
-  ⏱️   TYPE:      STRICTLY PREORDER
-
-
-
-                            
-
-  📅  DATE:      ${dateStr}
- 🕐  TIME:      ${timeStr}
-
-
-
-              CUSTOMER NOTE              
-
-  👋 Hello Fel's team!
-  
-  I would like to place a PREORDER for:
-  ➜ ${dish}
-  
-  
-  Please confirm:
-  ✓ Availability
-  ✓ Pickup time / Delivery options
- 
-  
-  Thank you! 🙏
-
-`;
-            
-            return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-        }
-
-        const toast = document.getElementById('premiumToast');
-        function triggerOrder(dishName, priceVal) {
-            const waLink = buildWhatsAppLink(dishName, priceVal);
-            if (toast) {
-                toast.innerHTML = `<i class="fab fa-whatsapp"></i> Opening WhatsApp — your order is clearly formatted...`;
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 2000);
-            }
-            setTimeout(() => {
-                window.open(waLink, '_blank');
-            }, 280);
-        }
-
-        // attach events to both order buttons
-        const allOrderBtns = document.querySelectorAll('.order-wa-btn');
-        allOrderBtns.forEach(btn => {
-            // Remove any existing listeners to avoid duplicates
-            btn.removeEventListener('click', triggerOrder);
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const dish = btn.getAttribute('data-dish');
-                const price = btn.getAttribute('data-price');
-                if (dish && price) {
-                    triggerOrder(dish, price);
-                } else {
-                    triggerOrder("Fel's Special Rice", "100 cedis");
+        // Set up protein button listeners for all selectors
+        document.querySelectorAll('.protein-selector').forEach(selector => {
+            const groupName = selector.getAttribute('data-dish-group');
+            const btns = selector.querySelectorAll('.protein-btn');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const selectedProtein = btn.getAttribute('data-protein');
+                    if (groupName && proteinSelections.hasOwnProperty(groupName)) {
+                        proteinSelections[groupName] = selectedProtein;
+                    }
+                });
+                // Set default active (Beef)
+                if (btn.getAttribute('data-protein') === 'Beef') {
+                    btn.classList.add('active');
                 }
             });
         });
 
-        // additional hover polish
-        const cards = document.querySelectorAll('.lux-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'all 0.4s cubic-bezier(0.2, 0.95, 0.4, 1.1)';
+        // Helper to get selected protein for a specific order button
+        function getProteinForButton(btn) {
+            const group = btn.getAttribute('data-group');
+            if (group && proteinSelections[group]) {
+                return proteinSelections[group];
+            }
+            return 'Beef';
+        }
+
+        // Build crystal clear WhatsApp message (supports Classic with protein OR Assorted with full extras)
+        function buildWhatsAppMessage(dishName, price, protein, isAssorted) {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+            const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true });
+            
+            if (isAssorted) {
+                return `
+╔════════════════════════════════════════════════╗
+║     🍛 FEL'S FOOD COURT - PREORDER 🍛          ║
+╚════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────┐
+│                 ORDER DETAILS                  │
+├────────────────────────────────────────────────┤
+│  🍽️  DISH:       ${dishName}
+│  💰  PRICE:      100 cedis (GHS 100)
+│  🥩  PROTEIN:    ${protein} (Beef/Chicken/Goat)
+│  🥗  INCLUDES:   Coleslaw Salad + Fried Plantain + Egg
+│  ⏱️   TYPE:       STRICTLY PREORDER (ASSORTED)
+└────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────┐
+│                   TIMESTAMP                    │
+├────────────────────────────────────────────────┤
+│  📅  DATE:       ${dateStr}
+│  🕐  TIME:       ${timeStr}
+└────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────┐
+│               CUSTOMER REQUEST                 │
+├────────────────────────────────────────────────┤
+│  👋 Hello Fel's team!
+│  
+│  I would like to place a PREORDER for:
+│  ➜ ${dishName}
+│  ➜ Protein: ${protein}
+│  ➜ Complete assorted meal with salad, plantain, and egg.
+│  
+│  📌 Please confirm:
+│     ✓ Availability
+│     ✓ Pickup time / Delivery options
+│  
+│  (Optional: Add gizzard or sausage — let me know)
+│  
+│  Thank you! 🙏
+└────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔔 STRICTLY PREORDER - ALL ORDERS VIA WHATSAPP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+            } else {
+                return `
+╔════════════════════════════════════════════════╗
+║     🍛 FEL'S FOOD COURT - PREORDER 🍛          ║
+╚════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────┐
+│                 ORDER DETAILS                  │
+├────────────────────────────────────────────────┤
+│  🍽️  DISH:       ${dishName}
+│  💰  PRICE:      100 cedis (GHS 100)
+│  🥩  PROTEIN:    ${protein} (Beef/Chicken/Goat)
+│  🍽️  STYLE:      CLASSIC (rice + plantain + protein)
+│  ⏱️   STATUS:     STRICTLY PREORDER
+└────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────┐
+│                   TIMESTAMP                    │
+├────────────────────────────────────────────────┤
+│  📅  DATE:       ${dateStr}
+│  🕐  TIME:       ${timeStr}
+└────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────┐
+│               CUSTOMER REQUEST                 │
+├────────────────────────────────────────────────┤
+│  👋 Hello Fel's team!
+│  
+│  I would like to place a PREORDER for:
+│  ➜ ${dishName}
+│  ➜ Protein: ${protein}
+│  
+│  📌 Please confirm availability and pickup time.
+│  
+│  Thank you! 🙏
+└────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔔 STRICTLY PREORDER - ALL ORDERS VIA WHATSAPP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+            }
+        }
+
+        const toast = document.getElementById('premiumToast');
+        function triggerOrder(dishName, price, protein, isAssorted) {
+            const number = cleanNumber(FELS_WA_NUMBER);
+            const message = buildWhatsAppMessage(dishName, price, protein, isAssorted);
+            const waLink = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+            if (toast) {
+                toast.innerHTML = `<i class="fab fa-whatsapp"></i> Opening WhatsApp for ${dishName} (${protein})...`;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }
+            setTimeout(() => { window.open(waLink, '_blank'); }, 280);
+        }
+
+        // Attach listeners to all order buttons
+        const allBtns = document.querySelectorAll('.order-btn');
+        allBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dishName = btn.getAttribute('data-dish');
+                const price = btn.getAttribute('data-price');
+                const isAssorted = btn.getAttribute('data-assorted') === 'true';
+                const protein = getProteinForButton(btn);
+                triggerOrder(dishName, price, protein, isAssorted);
             });
         });
         
-        console.log("✅ Fel's Food Court is ready! WhatsApp number: " + cleanNumber(FELS_WA_NUMBER));
+        console.log("✅ Fel's Food Court ready — All 4 meals now include protein selection (Beef, Chicken, Goat)");
     })();
 </script>
 </body>
