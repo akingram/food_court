@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fel's Food Court | Artisanal Rice Preorder</title>
+    <!-- Fonts: Elegant serif + modern sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0c0a09;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ece7e0;
+            overflow-x: hidden;
+        }
+
+        /* animated grain texture overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDYiLz48L3N2Zz4=');
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.3;
+        }
+
+        /* ambient gradient orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.5;
+            z-index: -1;
+            animation: floatOrb 18s infinite alternate;
+        }
+        .orb1 { width: 60vw; height: 60vw; background: #d97706; top: -20vh; left: -20vw; opacity: 0.2; }
+        .orb2 { width: 50vw; height: 50vw; background: #b45309; bottom: -30vh; right: -15vw; opacity: 0.25; animation-duration: 25s; }
+        .orb3 { width: 40vw; height: 40vw; background: #f59e0b; top: 40%; left: 30%; opacity: 0.12; animation-duration: 20s; }
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 8%) scale(1.2); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* premium navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0 1rem;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fbbf24, #ea7c2e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-size: 1rem;
+            background: none;
+            color: #a87b40;
+            font-weight: 400;
+        }
+        .preorder-badge-nav {
+            background: rgba(217, 119, 6, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* hero section — bold & cinematic */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem 0;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-left .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
+            color: #f59e0b;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .hero-left h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero-left h1 .highlight {
+            color: #f59e0b;
+            border-bottom: 2px solid #f59e0b;
+            display: inline-block;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #d4cfc7;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            max-width: 90%;
+        }
+        .strict-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(16px);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(245,158,11,0.4);
+            margin-top: 0.5rem;
+        }
+        .strict-chip i {
+            font-size: 1.6rem;
+            color: #25D366;
+        }
+        .hero-right {
+            position: relative;
+        }
+        .hero-image-frame {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            transform: rotate(2deg);
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.5);
+            border: 1px solid rgba(245,158,11,0.3);
+        }
+        .hero-image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .hero-image-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        /* menu cards — super premium 3D feel */
+        .menu-section {
+            padding: 6rem 0 7rem;
+        }
+        .section-tag {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: #f59e0b;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+        .master-card {
+            flex: 1;
+            min-width: 320px;
+            max-width: 460px;
+            background: rgba(20, 18, 16, 0.7);
+            backdrop-filter: blur(16px);
+            border-radius: 56px;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            overflow: hidden;
+        }
+        .master-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(245, 158, 11, 0.7);
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.7);
+            background: rgba(24, 22, 20, 0.85);
+        }
+        .card-img-container {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+        .master-card:hover .card-img-container img {
+            transform: scale(1.08);
+        }
+        .price-float {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #000000aa;
+            backdrop-filter: blur(12px);
+            padding: 0.6rem 1.3rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            color: #fbbf24;
+            border: 1px solid #f59e0b66;
+        }
+        .card-inner {
+            padding: 2rem 2rem 2rem;
+        }
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .card-rice-type {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            color: #f59e0b;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .card-desc {
+            color: #bcb3a4;
+            line-height: 1.5;
+            margin: 1rem 0 1.8rem;
+            font-size: 0.95rem;
+        }
+        .wa-btn {
+            background: #25D366;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 40px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1rem;
+            color: #12100e;
+            background: linear-gradient(95deg, #25D366 0%, #20b859 100%);
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .wa-btn i {
+            font-size: 1.3rem;
+        }
+        .wa-btn:hover {
+            transform: scale(0.97);
+            filter: brightness(1.05);
+            box-shadow: 0 10px 20px -5px #25d36670;
+        }
+
+        /* features row */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(245,158,11,0.2);
+            border-bottom: 1px solid rgba(245,158,11,0.2);
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(0,0,0,0.3);
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            backdrop-filter: blur(8px);
+        }
+        .feature i {
+            font-size: 1.6rem;
+            color: #f59e0b;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid rgba(245,158,11,0.15);
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #9c8872;
+        }
+
+        /* toast */
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #181511e6;
+            backdrop-filter: blur(20px);
+            padding: 14px 28px;
+            border-radius: 60px;
+            color: #fcd34d;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+            border: 1px solid #f59e0b;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .toast-message.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 1000px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-left h1 {
+                font-size: 3.5rem;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .section-title {
+                font-size: 2.3rem;
+            }
+            .price-float {
+                font-size: 1.4rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="grain-overlay"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<div class="container">
+    <nav class="navbar">
+        <div class="logo">FEL'S <span>FOOD COURT</span></div>
+        <div class="preorder-badge-nav"><i class="fab fa-whatsapp"></i> 24/7 preorder hotline</div>
+    </nav>
+</div>
+
+<main>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="eyebrow">GHANAIAN KITCHEN • ARTISANAL</div>
+                    <h1>where rice becomes <span class="highlight">celebration</span></h1>
+                    <p class="hero-desc">Fel's Food Court serves two legendary rice dishes — pure comfort, deep flavor. Every plate is made-to-order. <strong>Strict preorder only.</strong> Reserve yours via WhatsApp.</p>
+                    <div class="strict-chip">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>📲 ALL PREORDERS GO DIRECTLY TO WHATSAPP • NO EXCEPTIONS</span>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image-frame">
+                        <img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fel's signature rice bowl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two Menu Items: Coconut Rice & Jollof Rice -->
+    <div class="menu-section">
+        <div class="container">
+            <div class="section-tag"><i class="fas fa-leaf"></i> signature preorder menu</div>
+            <div class="section-title">two icons · 100 cedis each</div>
+            <div class="cards-container">
+                <!-- Coconut Rice Card -->
+                <div class="master-card" data-item="Coconut Rice">
+                    <div class="card-img-container">
+                        <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coconut Rice with plantain">
+                        <div class="price-float">₵100</div>
+                    </div>
+                    <div class="card-inner">
+                        <div class="card-title">Coconut Rice</div>
+                        <div class="card-rice-type"><i class="fas fa-water"></i> coconut-infused • creamy • plantain side</div>
+                        <div class="card-desc">Fragrant basmati slowly steeped in fresh coconut milk, toasted curry leaves, and a whisper of ginger. Served with crispy fried plantains and a drizzle of coconut-chili sauce. Pure euphoria.</div>
+                        <button class="wa-btn coconut-order"><i class="fab fa-whatsapp"></i> Preorder via WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Jollof Rice Card -->
+                <div class="master-card" data-item="Jollof Rice">
+                    <div class="card-img-container">
+                        <img src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jollof Rice traditional">
+                        <div class="price-float">₵100</div>
+                    </div>
+                    <div class="card-inner">
+                        <div class="card-title">Jollof Rice</div>
+                        <div class="card-rice-type"><i class="fas fa-fire"></i> smoky • rich tomato • Ghana style</div>
+                        <div class="card-desc">Legendary party jollof: slow-cooked with ripe tomatoes, onions, bell peppers, scotch bonnet, and a medley of spices. Served with coleslaw and grilled plantain. Deep, bold, unforgettable.</div>
+                        <button class="wa-btn jollof-order"><i class="fab fa-whatsapp"></i> Preorder via WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature"><i class="fas fa-stopwatch"></i> <span>Strictly Preorder (2hrs advance)</span></div>
+            <div class="feature"><i class="fas fa-motorcycle"></i> <span>Delivery/Pickup via WhatsApp</span></div>
+            <div class="feature"><i class="fas fa-utensils"></i> <span>Fresh, made-to-order only</span></div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>© 2025 FEL'S FOOD COURT — Coconut Rice & Jollof Rice · 100 cedis each</p>
+    <p style="margin-top: 0.6rem;"><i class="fab fa-whatsapp"></i> All orders via WhatsApp only — preorder to secure your plate</p>
+</footer>
+
+<div id="globalToast" class="toast-message"><i class="fab fa-whatsapp"></i> Opening WhatsApp for your preorder...</div>
+
+<script>
+    (function() {
+        // =================================================================
+        // 🔥 IMPORTANT: REPLACE WITH YOUR ACTUAL WHATSAPP BUSINESS NUMBER 🔥
+        // Example for Ghana: 233501234567 (that's +233 50 123 4567)
+        // =================================================================
+        const FELS_WHATSAPP = '233551234567';   // <--- CHANGE THIS TO YOUR REAL NUMBER
+        
+        if (FELS_WHATSAPP === '233551234567') {
+            console.warn("⚠️ Fel's Food Court: Please update FELS_WHATSAPP with your actual WhatsApp number inside <script>.");
+        }
+
+        // helper format number for wa.me
+        function formatNumberForWA(num) {
+            let cleaned = String(num).replace(/\s+/g, '').replace(/[^0-9+]/g, '');
+            if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
+            if (cleaned.startsWith('0') && cleaned.length > 9) cleaned = '233' + cleaned.substring(1);
+            if (!cleaned || cleaned.length < 8) cleaned = '233551234567';
+            return cleaned;
+        }
+
+        function generateWALink(dishName, price = "100 cedis") {
+            const number = formatNumberForWA(FELS_WHATSAPP);
+            const currentDate = new Date();
+            const formattedDateTime = `${currentDate.toLocaleDateString('en-GB')} at ${currentDate.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}`;
+            const message = `🍛 *FEL'S FOOD COURT — NEW PREORDER* 🍛%0A%0A✨ *Item:* ${dishName}%0A💰 *Price:* ${price} (GHS 100)%0A⏱️ *Strictly Preorder*%0A📅 *Request sent:* ${formattedDateTime}%0A%0A👋 Hello Fel's team! I'd like to preorder ${dishName} (100 cedis). Please confirm pickup/delivery options. Thank you! 🔥%0A%0A📌 *This is a preorder request via website*`;
+            return `https://wa.me/${number}?text=${message}`;
+        }
+
+        const toastEl = document.getElementById('globalToast');
+        function showToastAndRedirect(link) {
+            if (toastEl) {
+                toastEl.classList.add('show');
+                setTimeout(() => {
+                    toastEl.classList.remove('show');
+                }, 1800);
+            }
+            setTimeout(() => {
+                window.open(link, '_blank');
+            }, 280);
+        }
+
+        // attach listeners to both buttons with robust selectors
+        const coconutBtn = document.querySelector('.coconut-order');
+        const jollofBtn = document.querySelector('.jollof-order');
+
+        if (coconutBtn) {
+            coconutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const waLink = generateWALink('Coconut Rice', '100 cedis');
+                showToastAndRedirect(waLink);
+            });
+        }
+        if (jollofBtn) {
+            jollofBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const waLink = generateWALink('Jollof Rice', '100 cedis');
+                showToastAndRedirect(waLink);
+            });
+        }
+
+        // also add fallback for any .wa-btn (extra safety)
+        const allWABtns = document.querySelectorAll('.wa-btn');
+        allWABtns.forEach(btn => {
+            if (!btn.classList.contains('coconut-order') && !btn.classList.contains('jollof-order')) {
+                // fallback if needed
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const parentCard = btn.closest('.master-card');
+                    let itemName = parentCard?.querySelector('.card-title')?.innerText || "Special Rice";
+                    const waLink = generateWALink(itemName, '100 cedis');
+                    showToastAndRedirect(waLink);
+                });
+            }
+        });
+    })();
+</script>
+</body>
+</html>
