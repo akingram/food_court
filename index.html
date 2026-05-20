@@ -555,46 +555,42 @@
             });
             
             // Crystal clear, well-structured message with borders and sections
-            const message = `╔════════════════════════════════════════╗
-║     🍛 FEL'S FOOD COURT - NEW ORDER 🍛     ║
-╚════════════════════════════════════════╝
+            const message = `
+     🍛 FEL'S FOOD COURT - NEW ORDER 🍛    
 
-┌─────────────────────────────────────────┐
-│              ORDER DETAILS              │
-├─────────────────────────────────────────┤
-│  🍽️  DISH:      ${dish}
-│  💰  PRICE:     ${price} (100 GHS)
-│  ⏱️   TYPE:      STRICTLY PREORDER
-└─────────────────────────────────────────┘
 
-┌─────────────────────────────────────────┐
-│              TIMESTAMP                  │
-├─────────────────────────────────────────┤
-│  📅  DATE:      ${dateStr}
-│  🕐  TIME:      ${timeStr}
-└─────────────────────────────────────────┘
 
-┌─────────────────────────────────────────┐
-│              CUSTOMER NOTE              │
-├─────────────────────────────────────────┤
-│  👋 Hello Fel's team!
-│  
-│  I would like to place a PREORDER for:
-│  ➜ ${dish}
-│  
-│  💵 Amount: 100 cedis
-│  
-│  Please confirm:
-│  ✓ Availability
-│  ✓ Pickup time / Delivery options
-│  ✓ Total amount to pay
-│  
-│  Thank you! 🙏
-└─────────────────────────────────────────┘
+             ORDER DETAILS              
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔔 STRICTLY PREORDER - NO WALK-INS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+  🍽️  DISH:      ${dish}
+  💰  PRICE:     ${price} (100 GHS)
+  ⏱️   TYPE:      STRICTLY PREORDER
+
+
+
+                            
+
+  📅  DATE:      ${dateStr}
+ 🕐  TIME:      ${timeStr}
+
+
+
+              CUSTOMER NOTE              
+
+  👋 Hello Fel's team!
+  
+  I would like to place a PREORDER for:
+  ➜ ${dish}
+  
+  
+  Please confirm:
+  ✓ Availability
+  ✓ Pickup time / Delivery options
+ 
+  
+  Thank you! 🙏
+
+`;
             
             return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
         }
