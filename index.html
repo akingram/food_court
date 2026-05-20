@@ -421,7 +421,7 @@
             <div class="logo">FEL'S FOOD COURT</div>
             <div class="logo-sub">artisanal rice · accra</div>
         </div>
-        <div class="wa-cta"><i class="fab fa-whatsapp"></i> +233 XX XXX XXXX</div>
+        <div class="wa-cta"><i class="fab fa-whatsapp"></i> Order via WhatsApp</div>
     </nav>
 </div>
 
@@ -440,7 +440,7 @@
                 </div>
                 <div class="hero-right">
                     <div class="hero-image-wrapper">
-                        <img src="images/image5.jpeg" alt="Fel's signature rice platter">
+                        <img src="images/image5.jpeg" alt="Fel's signature rice platter" onerror="this.src='https://images.pexels.com/photos/1618896/pexels-photo-1618896.jpeg?auto=compress&cs=tinysrgb&w=600'">
                     </div>
                 </div>
             </div>
@@ -455,10 +455,10 @@
                 <h2>100 cedis · each masterpiece</h2>
             </div>
             <div class="cards-luxury">
-                <!-- Coconut Rice Card - HIGH QUALITY, FULLY VISIBLE IMAGE -->
+                <!-- Coconut Rice Card -->
                 <div class="lux-card" id="coconut-card">
                     <div class="card-media">
-                        <img src="images/image1.jpeg" alt="Beautiful Coconut Rice with fried plantain and garnish - clear full view">
+                        <img src="images/image1.jpeg" alt="Beautiful Coconut Rice with fried plantain" onerror="this.src='https://images.pexels.com/photos/6129467/pexels-photo-6129467.jpeg?auto=compress&cs=tinysrgb&w=800'">
                         <div class="price-badge">₵100<small> GHS</small></div>
                     </div>
                     <div class="card-content">
@@ -471,10 +471,10 @@
                     </div>
                 </div>
 
-                <!-- Jollof Rice Card - HIGH QUALITY, FULLY VISIBLE, ENTIRE DISH SHOWN -->
+                <!-- Jollof Rice Card -->
                 <div class="lux-card" id="jollof-card">
                     <div class="card-media">
-                        <img src="images/image2.jpeg" alt="Authentic Ghanaian Jollof Rice full plate with plantain - clear view">
+                        <img src="images/image2.jpeg" alt="Authentic Ghanaian Jollof Rice" onerror="this.src='https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800'">
                         <div class="price-badge">₵100<small> GHS</small></div>
                     </div>
                     <div class="card-content">
@@ -498,7 +498,7 @@
         </div>
         <div style="text-align: center; margin-bottom: 2rem;">
             <div style="background: rgba(0,0,0,0.4); display: inline-block; padding: 0.6rem 1.6rem; border-radius: 60px; font-size: 0.8rem; backdrop-filter: blur(8px);">
-                <i class="fas fa-phone-alt"></i> WhatsApp preorder line: click any button below
+                <i class="fab fa-whatsapp"></i> Click any button — order details will be clearly formatted
             </div>
         </div>
     </div>
@@ -516,31 +516,86 @@
 <script>
     (function() {
         // =====================================================================
-        // 🔥🔥🔥 IMPORTANT – SET YOUR ACTUAL WHATSAPP BUSINESS NUMBER 🔥🔥🔥
+        // 🔥 IMPORTANT – SET YOUR ACTUAL WHATSAPP BUSINESS NUMBER 🔥
         // Replace with your real Ghana number (example: 233501234567)
+        // Current number set to: 233533639864
         // =====================================================================
-        const FELS_WA_NUMBER = '233551234567';   // <--- CHANGE THIS TO YOUR REAL WHATSAPP
+        const FELS_WA_NUMBER = '233533639864';   // <--- YOUR WHATSAPP NUMBER
         
-        if (FELS_WA_NUMBER === '233551234567') {
-            console.warn("⚠️ Fel's Food Court: Please replace FELS_WA_NUMBER with your active WhatsApp business number.");
-        }
-
         // Helper: clean number for wa.me
         function cleanNumber(num) {
             let cleaned = String(num).replace(/\s+/g, '').replace(/[^0-9+]/g, '');
             if (cleaned.startsWith('+')) cleaned = cleaned.substring(1);
             if (cleaned.startsWith('0') && cleaned.length > 9) cleaned = '233' + cleaned.substring(1);
-            if (!cleaned || cleaned.length < 8) cleaned = '233551234567';
+            if (!cleaned || cleaned.length < 8) cleaned = '233533639864';
+            // Ensure it starts with 233 for Ghana
+            if (!cleaned.startsWith('233') && cleaned.length === 9) {
+                cleaned = '233' + cleaned;
+            }
             return cleaned;
         }
 
-        // Build rich WhatsApp message (strict preorder)
+        // Build EXTREMELY CLEAN, WELL-ARRANGED WhatsApp message
+        // Using proper formatting, line breaks, and emojis for clarity
         function buildWhatsAppLink(dish, price) {
             const number = cleanNumber(FELS_WA_NUMBER);
             const now = new Date();
-            const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            const message = `🍛 *FEL'S FOOD COURT — NEW PREORDER* 🍛%0A%0A━━━━━━━━━━━━━━━━━━%0A✨ *DISH:* ${dish}%0A💰 *PRICE:* ${price} (GHS 100)%0A⏱️ *STRICT PREORDER*%0A📅 *DATE:* ${dateStr} at ${timeStr}%0A━━━━━━━━━━━━━━━━━━%0A%0A👋 Hello Fel's team! I would like to place a preorder for ${dish} (100 cedis). Please confirm availability, pickup time, and any delivery options. Thank you! 🙏%0A%0A🔔 *WhatsApp preorder only — no walk-ins*`;
+            
+            // Format date beautifully
+            const dateStr = now.toLocaleDateString('en-GB', { 
+                weekday: 'long', 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            });
+            const timeStr = now.toLocaleTimeString('en-GB', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            
+            // Crystal clear, well-structured message with borders and sections
+            const message = `╔════════════════════════════════════════╗
+║     🍛 FEL'S FOOD COURT - NEW ORDER 🍛     ║
+╚════════════════════════════════════════╝
+
+┌─────────────────────────────────────────┐
+│              ORDER DETAILS              │
+├─────────────────────────────────────────┤
+│  🍽️  DISH:      ${dish}
+│  💰  PRICE:     ${price} (100 GHS)
+│  ⏱️   TYPE:      STRICTLY PREORDER
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│              TIMESTAMP                  │
+├─────────────────────────────────────────┤
+│  📅  DATE:      ${dateStr}
+│  🕐  TIME:      ${timeStr}
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│              CUSTOMER NOTE              │
+├─────────────────────────────────────────┤
+│  👋 Hello Fel's team!
+│  
+│  I would like to place a PREORDER for:
+│  ➜ ${dish}
+│  
+│  💵 Amount: 100 cedis
+│  
+│  Please confirm:
+│  ✓ Availability
+│  ✓ Pickup time / Delivery options
+│  ✓ Total amount to pay
+│  
+│  Thank you! 🙏
+└─────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔔 STRICTLY PREORDER - NO WALK-INS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+            
             return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
         }
 
@@ -548,7 +603,7 @@
         function triggerOrder(dishName, priceVal) {
             const waLink = buildWhatsAppLink(dishName, priceVal);
             if (toast) {
-                toast.innerHTML = `<i class="fab fa-whatsapp"></i> Opening WhatsApp for ${dishName} preorder...`;
+                toast.innerHTML = `<i class="fab fa-whatsapp"></i> Opening WhatsApp — your order is clearly formatted...`;
                 toast.classList.add('show');
                 setTimeout(() => toast.classList.remove('show'), 2000);
             }
@@ -560,6 +615,8 @@
         // attach events to both order buttons
         const allOrderBtns = document.querySelectorAll('.order-wa-btn');
         allOrderBtns.forEach(btn => {
+            // Remove any existing listeners to avoid duplicates
+            btn.removeEventListener('click', triggerOrder);
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const dish = btn.getAttribute('data-dish');
@@ -567,7 +624,7 @@
                 if (dish && price) {
                     triggerOrder(dish, price);
                 } else {
-                    triggerOrder("Special Rice", "100 cedis");
+                    triggerOrder("Fel's Special Rice", "100 cedis");
                 }
             });
         });
@@ -579,6 +636,8 @@
                 card.style.transition = 'all 0.4s cubic-bezier(0.2, 0.95, 0.4, 1.1)';
             });
         });
+        
+        console.log("✅ Fel's Food Court is ready! WhatsApp number: " + cleanNumber(FELS_WA_NUMBER));
     })();
 </script>
 </body>
